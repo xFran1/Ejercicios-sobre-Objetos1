@@ -1,0 +1,56 @@
+<script>
+
+    let cuenta1 = {
+        titular:"Javier",
+        saldo:3000,
+        ingresar: function(cantidad){
+            this.saldo+=cantidad;
+        },
+        extraer: function(cantidad){
+            this.saldo-=cantidad;
+        },
+        transferir: function(cuenta,cantidad){
+            cuenta.ingresar(cantidad);
+            this.extraer(cantidad);
+        },
+        toString: function(){
+            console.log(`${this.titular} con saldo ${this.saldo}`);
+        }
+
+    }
+    let cuenta2 = {
+        titular:"Rocio",
+        saldo:5000,
+        ingresar: function(cantidad){
+            this.saldo+=cantidad;
+        },
+        extraer: function(cantidad){
+            this.saldo-=cantidad;
+        },
+        transferir: function(cuenta,cantidad){
+            cuenta.ingresar(cantidad);
+            this.extraer(cantidad);
+        },
+        toString: function(){
+            console.log(`${this.titular} con saldo ${this.saldo}`);
+        }
+
+    }
+
+    // cuenta1.transferir(cuenta2,500);
+    // console.log(cuenta1.toString())
+    // console.log(cuenta2.toString())
+
+let cuentas=[
+    {titular:"Carlos",saldo:10000},
+    {titular:"Lidia",saldo:12500},
+    {titular:"Alicia",saldo:8500},
+    {titular:"Felipe",saldo:9000}
+]
+cuentas.sort(function(a,b) {return a.saldo-b.saldo});
+
+cuentas.forEach((element) =>{
+    console.log(element);
+});
+
+</script>

@@ -1,0 +1,77 @@
+<script>
+    class Persona{
+        constructor(nombre,edad){
+            this._nombre=nombre;
+            this._edad=edad;
+
+        }
+
+        get nombre(){
+            return this._nombre;
+        }
+        
+        get edad(){
+            return this._edad;
+        }
+
+        set nombre(n){
+            this._nombre=n;
+        }
+
+        set edad(e){
+            this._edad=e;
+        }
+
+        toString(){
+            return `Nombre: ${this._nombre},Edad: ${this._edad}`
+        }
+    }
+
+    class Empleado extends Persona{
+        constructor(nombre,edad,sueldo){
+            super(nombre,edad);
+            this._sueldo=sueldo;
+        } 
+        
+        get sueldo(){
+            return this._sueldo;
+        }
+        
+        get sueldo(){
+            return this._sueldo;
+        }
+
+        toString(){
+            return super.toString()+`, Sueldo: ${this._sueldo}`
+        }
+    }
+    const persona = new Persona("Juan",30);
+    console.log(persona.toString());
+    const empleado = new Empleado("María", 40, 3000);
+    console.log(empleado.toString());
+
+    const empleados= [
+        new Empleado("Juan", 18, 1250),
+        new Empleado("Ana", 15, 870),
+        new Empleado("Zamudio", 21, 1320),
+        new Empleado("María", 19, 1650)
+    ];
+
+    const duplicado = empleados.slice();
+
+    console.log("Ordenando por edad")
+    duplicado.sort(function(a,b) {return b.edad-a.edad})
+    duplicado.forEach((elemento)=>{
+        console.log(elemento.toString());
+    })
+    console.log("Ordenando por sueldo")
+    duplicado.sort(function(a,b) {return b.sueldo-a.sueldo})
+    duplicado.forEach((elemento)=>{
+        console.log(elemento.toString());
+    })
+    console.log("Ordenando por nombre")
+    duplicado.sort(function(a,b) {return b.nombre-a.nombre})
+    duplicado.forEach((elemento)=>{
+        console.log(elemento.toString());
+    })
+</script>

@@ -1,0 +1,36 @@
+<script>
+    class Piloto{
+
+        constructor(nombre){
+            this._nombre=nombre;
+
+        }
+
+        get nombre(){
+            return this._nombre;
+        }
+        set nombre(n){
+            this._nombre=n;
+        }
+
+        
+    }
+
+    class Aeroplano {
+        constructor(modelo,piloto,copiloto){
+            this._modelo=modelo;
+            this._piloto=piloto;
+            this._copiloto=copiloto;
+
+        }
+        volar(){
+            return `Volando ${this._modelo} con ${this._piloto} como piloto y ${this._piloto2} como copiloto`
+        }
+    }
+    const piloto1= new Piloto("Hans Solo");
+    const piloto2= new Piloto("Murdock");
+    const avioneta = new Aeroplano("Airbus C295",piloto1._nombre,piloto2._nombre);
+    console.log(avioneta._modelo)
+    console.log(avioneta.volar());
+
+</script>
