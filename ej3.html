@@ -70,7 +70,7 @@
         console.log(elemento.toString());
     })
     console.log("Ordenando por nombre")
-    duplicado.sort(function(a,b) {return b.nombre-a.nombre})
+    duplicado.sort((c1,c2) => c1.nombre.localeCompare(c2.nombre));
     duplicado.forEach((elemento)=>{
         console.log(elemento.toString());
     })
